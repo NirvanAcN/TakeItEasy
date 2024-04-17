@@ -10,15 +10,18 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
+            CameraView() // SwiftUI与UIKit混用
+                .background(Color.red)
             Text("Hello, world!")
         }
         .padding()
+        .onTapGesture {
+            print("@mahaomeng this is my action")
+        }
     }
 }
 
-#Preview {
-    ContentView()
-}
+
+//#Preview {
+//    ContentView()
+//}
