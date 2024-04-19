@@ -9,12 +9,22 @@ import SwiftUI
 import AVFoundation
 
 struct CameraView: UIViewControllerRepresentable {
+    var callback: (() -> Void)?
+    @Binding var txt: String /// 也可以通过@Binding改变时会调用updateUIViewController(_:context:)来执行特定的函数(@Binding实现事件传递)
+
+    private let cameraViewController = CameraViewController()
+
     func makeUIViewController(context: Context) -> CameraViewController {
-        let cameraViewController = CameraViewController()
         return cameraViewController
     }
     
     func updateUIViewController(_ uiViewController: CameraViewController, context: Context) {
+        print(txt)
+    }
+    
+    func testAction() {
+        print(#function)
+        callback?()
     }
 }
 

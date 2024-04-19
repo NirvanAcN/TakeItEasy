@@ -63,8 +63,8 @@
 				87B864C12BCE62E300F85C3F /* shaderv.vsh */,
 				87B864AD2BCE1BB000F85C3F /* TakeItEasyApp.swift */,
 				87B864AF2BCE1BB000F85C3F /* ContentView.swift */,
-				87B864BB2BCE4DA900F85C3F /* RenderView.swift */,
 				87B864BD2BCE584700F85C3F /* CameraView.swift */,
+				87B864BB2BCE4DA900F85C3F /* RenderView.swift */,
 				87B864B12BCE1BB200F85C3F /* Assets.xcassets */,
 				87B864B32BCE1BB200F85C3F /* Preview Content */,
 			);

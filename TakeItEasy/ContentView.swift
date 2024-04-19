@@ -8,15 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var txt: String = "Hello, world!"
+    @State private var cameraViewInstance: CameraView?
+    
     var body: some View {
         VStack {
-            CameraView() // SwiftUI与UIKit混用
+            cameraViewInstance? // SwiftUI与UIKit混用
                 .background(Color.red)
-            Text("Hello, world!")
+            Text(txt)
         }
         .padding()
         .onTapGesture {
-            print("@mahaomeng this is my action")
+            cameraViewInstance?.testAction() // 事件传递到UIKit
+        }
+        .onAppear {
+            cameraViewInstance = CameraView(callback: { // UIKit事件回调到SwiftUI
+                print(#function)
+                txt = "this value from UIKit callback"
+            }, txt: $txt)
         }
     }
 }
